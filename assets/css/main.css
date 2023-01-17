@@ -3006,6 +3006,12 @@ table.alt tbody tr td {
   text-align: left;
 }
 
+.statistics-header {
+  font-weight: bold;
+  color: white !important;
+  margin-bottom: 0;
+}
+
 .statistics-links {
   align-self: flex-end;
   display: flex;
