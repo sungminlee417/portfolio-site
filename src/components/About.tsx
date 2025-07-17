@@ -50,14 +50,16 @@ export default function About() {
             Download Resume
           </a>
         </div>
-        <Image
-          src="/about.png"
-          alt="Sungmin Lee"
-          width={400}
-          height={500}
-          className="rounded-xl shadow-lg object-cover w-full"
-          priority
-        />
+        <div className="flex-1 max-w-sm">
+          <Image
+            src="/about.png"
+            alt="Sungmin Lee"
+            width={400}
+            height={500}
+            className="rounded-xl shadow-lg object-cover w-full"
+            priority
+          />
+        </div>
       </div>
     </section>
   );
