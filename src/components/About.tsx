@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section id="intro" className="main mb-12">
@@ -9,7 +11,7 @@ export default function About() {
           </header>
 
           <p className="mb-4">
-            I'm a fullstack software engineer with over three years of
+            I&apos;m a fullstack software engineer with over three years of
             experience building scalable, user-friendly web applications. I
             specialize in React, Next.js, Node, and TypeScript, and enjoy
             working across the entire stack — from crafting intuitive frontends
@@ -18,9 +20,9 @@ export default function About() {
 
           <p className="mb-4">
             Before diving into software development, I pursued a deep passion
-            for music as a classical guitarist. I hold both a Bachelor's and a
-            Master's degree in Classical Guitar Performance and have been
-            honored with several awards and certifications along the way.
+            for music as a classical guitarist. I hold both a Bachelor&apos;s
+            and a Master&apos;s degree in Classical Guitar Performance and have
+            been honored with several awards and certifications along the way.
           </p>
 
           <p className="mb-4">
@@ -32,7 +34,7 @@ export default function About() {
           </p>
 
           <p className="mb-4">
-            I've worked in fast-paced startup environments where I led
+            I&apos;ve worked in fast-paced startup environments where I led
             architecture discussions, developed modular UI components, and built
             secure, scalable backend services. I thrive collaborating with
             cross-functional teams and delivering polished products that users
@@ -48,15 +50,14 @@ export default function About() {
             Download Resume
           </a>
         </div>
-
-        {/* Image */}
-        <div className="flex-1 max-w-sm">
-          <img
-            src="/about.png"
-            alt="Sungmin Lee"
-            className="rounded-xl shadow-lg object-cover w-full"
-          />
-        </div>
+        <Image
+          src="/about.png"
+          alt="Sungmin Lee"
+          width={400}
+          height={500}
+          className="rounded-xl shadow-lg object-cover w-full"
+          priority
+        />
       </div>
     </section>
   );
