@@ -21,7 +21,7 @@ export default function Footer() {
         >
           LinkedIn
         </a>
-        <a href="sungminlee417@gmail.com" className="hover:text-white">
+        <a href="mailto:sungminlee417@gmail.com" className="hover:text-white">
           Email
         </a>
       </p>

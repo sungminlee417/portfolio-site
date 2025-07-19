@@ -7,7 +7,7 @@ export default function Contact() {
         to hear from you!
       </p>
       <a
-        href="sungminlee417@gmail.com"
+        href="mailto:sungminlee417@gmail.com"
         className="mt-4 inline-block rounded-full bg-white/10 px-6 py-3 text-white backdrop-blur-md transition hover:bg-white/20"
       >
         Say Hello

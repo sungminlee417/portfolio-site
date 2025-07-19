@@ -4,8 +4,15 @@ export default function Projects() {
       name: "Calorie Counter",
       description:
         "Track your daily nutrition and macros with customizable food entries and goals.",
-      stack: ["Next.js", "Supabase", "Typescript", "Zod"],
+      highlights: [
+        "AI-powered food search and logging with Vercel AI SDK",
+        "Role-based access control via Supabase RLS",
+        "Real-time macro progress visualizations",
+      ],
+      stack: ["Next.js", "Supabase", "Typescript", "Zod", "Vercel AI SDK"],
       link: "https://calorie-counter-teal.vercel.app/",
+      repo: "https://github.com/sungminlee417/calorie-counter",
+      role: "Fullstack developer — designed backend API, AI integration, and UI",
     },
     {
       name: "Portfolio Site",
@@ -26,6 +33,13 @@ export default function Projects() {
           >
             <h3 className="text-xl font-semibold text-white">{project.name}</h3>
             <p className="text-white/80 mt-2">{project.description}</p>
+            {project.highlights && (
+              <ul className="list-disc list-inside mt-2 text-white/70 text-sm">
+                {project.highlights.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            )}
             <p className="text-sm text-white/60 mt-2 italic">
               {project.stack.join(" • ")}
             </p>

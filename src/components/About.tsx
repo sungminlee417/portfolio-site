@@ -42,7 +42,7 @@ export default function About() {
           </p>
 
           <a
-            href="https://sungmin-portfolio-site.s3.us-west-1.amazonaws.com/Lee_Sungmin_Resume.pdf"
+            href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 bg-yellow-400 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-500 transition"

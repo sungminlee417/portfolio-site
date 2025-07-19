@@ -27,7 +27,7 @@ export default function Skills() {
         <p className="text-gray-300 mt-2">Technologies I work with regularly</p>
       </header>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
         {skills.map((skill) => (
           <div
             key={skill.name}
