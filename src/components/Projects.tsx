@@ -6,6 +6,7 @@ export default function Projects() {
         "Track your daily nutrition and macros with customizable food entries and goals.",
       highlights: [
         "AI-powered food search and logging with Vercel AI SDK",
+        "Supports sending images of foods to assist with AI recognition and logging",
         "Role-based access control via Supabase RLS",
         "Real-time macro progress visualizations",
       ],
