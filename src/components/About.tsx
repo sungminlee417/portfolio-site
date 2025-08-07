@@ -27,8 +27,6 @@ export default function About() {
 
   return (
     <section id="about" ref={sectionRef} className="relative py-20">
-      <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/5 via-transparent to-purple-900/5 rounded-3xl hidden md:block" />
-      
       <div className="relative glass-dark rounded-3xl p-8 md:p-12">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div
