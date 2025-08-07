@@ -72,18 +72,19 @@ export default function Projects() {
           >
             <div className="relative h-full glass-dark rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-200 hover:-translate-y-1">
               <div className="p-8">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-start gap-3">
-                    <h3 className="text-2xl font-bold text-white group-hover:text-yellow-400 transition-colors duration-200">
-                      {project.name}
-                    </h3>
-                    {project.featured && (
-                      <span className="px-3 py-1 bg-yellow-400 text-black text-xs font-bold rounded-full">
-                        FEATURED
-                      </span>
-                    )}
-                  </div>
-                  <div className="flex gap-3">
+                <div className="mb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-3">
+                      <h3 className="text-2xl font-bold text-white group-hover:text-yellow-400 transition-colors duration-200">
+                        {project.name}
+                      </h3>
+                      {project.featured && (
+                        <span className="px-3 py-1 bg-yellow-400 text-black text-xs font-bold rounded-full w-fit">
+                          FEATURED
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex gap-3 justify-end sm:justify-start">
                     {project.repo && (
                       <a
                         href={project.repo}
@@ -110,6 +111,7 @@ export default function Projects() {
                         </svg>
                       </a>
                     )}
+                    </div>
                   </div>
                 </div>
 
