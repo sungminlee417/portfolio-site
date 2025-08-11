@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import ClientWork from "@/components/ClientWork";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
@@ -17,10 +18,11 @@ export default function Home() {
       <div className="relative z-10">
         <Header />
         
-        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-32">
+        <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16 md:space-y-24">
           <About />
           <Skills />
           <Projects />
+          <ClientWork />
           <Contact />
         </main>
         

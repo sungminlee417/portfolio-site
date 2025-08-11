@@ -19,6 +19,7 @@ export default function Navigation() {
     { href: "#about", label: "About" },
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
+    { href: "#client-work", label: "Client Work" },
     { href: "#contact", label: "Contact" },
   ];
 
