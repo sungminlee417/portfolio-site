@@ -27,30 +27,44 @@ export default function ClientWork() {
   const clientProjects = [
     {
       name: "Luke Benedict",
-      description: "Professional portfolio website for classical guitarist Luke Benedict, showcasing his performances, recordings, and artistic journey.",
-      client: "Classical Guitarist & Performer",
+      description: "Professional website for innovative composer-pianist Luke Benedict, showcasing his modernistic compositions and concert performances.",
+      client: "Composer & Pianist",
       year: "2024",
       link: "https://lukebenedict.com/",
       services: ["Web Design", "Development", "Content Strategy"],
       features: [
-        "Responsive design optimized for all devices",
-        "Performance gallery with audio/video integration",
-        "Professional biography and career highlights",
-        "Contact and booking information"
+        "Interactive concert calendar with ticket links",
+        "Complete compositions catalog with audio samples",
+        "Dark/light mode toggle for user preference",
+        "Social media integration (Spotify, YouTube, Instagram)"
       ]
     },
     {
       name: "The Muse Duo",
-      description: "Elegant website for The Muse Duo, highlighting their chamber music performances and collaborative artistry.",
+      description: "Elegant website for The Muse Duo, a neo-classical guitar and piano ensemble founded at Eastman School of Music.",
       client: "Chamber Music Ensemble",
       year: "2024",
       link: "https://themuseduo.com/",
       services: ["Web Design", "Development", "Branding"],
       features: [
-        "Clean, minimalist design reflecting musical elegance",
-        "Concert schedule and repertoire showcase",
-        "High-quality imagery and performance videos",
-        "Professional booking and contact system"
+        "Featured debut album 'Experiments' showcase",
+        "Press coverage and festival performance highlights",
+        "Professional gallery with performance photography",
+        "Contact system for booking chamber music performances"
+      ]
+    },
+    {
+      name: "Collin Holloway",
+      description: "Portfolio website for classical guitarist Collin Holloway, Eastman School graduate and co-founder of Off the Dock Chamber Music Festival.",
+      client: "Classical Guitarist",
+      year: "2024",
+      link: "https://collin-holloway.netlify.app/",
+      services: ["Web Design", "Development", "Portfolio Showcase"],
+      features: [
+        "Discography showcase with two studio albums",
+        "Integrated YouTube video performance gallery",
+        "Competition wins and festival performance history",
+        "Professional booking contact form"
       ]
     }
   ];
