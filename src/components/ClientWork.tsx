@@ -66,6 +66,20 @@ export default function ClientWork() {
         "Competition wins and festival performance history",
         "Professional booking contact form"
       ]
+    },
+    {
+      name: "Glenn Canin Guitars",
+      description: "Professional website for master luthier Glenn Canin, showcasing handcrafted concert classical guitars with traditional Spanish construction methods and innovative doubletop design.",
+      client: "Master Guitar Luthier",
+      year: "2024",
+      link: "https://glenncanin.netlify.app/",
+      services: ["Web Design", "Development", "E-commerce Strategy"],
+      features: [
+        "Detailed guitar specifications and pricing for each instrument",
+        "Professional photography gallery showcasing craftsmanship",
+        "Custom guitar commissioning information and process",
+        "Workshop visit booking system for potential buyers"
+      ]
     }
   ];
 
