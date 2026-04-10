@@ -1,4 +1,7 @@
 import "./globals.css";
+import Script from "next/script";
+
+const GA_ID = "G-Q622MW6BRD";
 
 export const metadata = {
   title: "Sungmin Lee — Software Engineer & Guitar Instructor",
@@ -20,7 +23,21 @@ export default function RootLayout({
           async
         ></script>
       </head>
-      <body>{children}</body>
+      <body>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }
