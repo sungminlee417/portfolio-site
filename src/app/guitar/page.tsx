@@ -103,6 +103,7 @@ export default function GuitarPage() {
 
   return (
     <PageShell
+      variant="guitar"
       navActions={
         <a
           href="#tab-shop"
