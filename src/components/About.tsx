@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { handleSmoothScroll } from "@/utils/smoothScroll";
 
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,110 +10,79 @@ export default function About() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
       { threshold: 0.1 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-20">
-      <div className="relative glass-dark rounded-3xl p-8 md:p-12">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div
-            className={`transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-            }`}
-          >
-            <h2 className="text-5xl font-bold mb-8">
-              <span className="text-gradient">About Me</span>
+    <section id="about" ref={sectionRef}>
+      <div
+        className={`transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
+        <div className="grid md:grid-cols-5 gap-10 items-start">
+          <div className="md:col-span-3 space-y-5 text-[hsl(var(--muted-foreground))] leading-relaxed">
+            <p className="section-subtitle">About</p>
+            <h2 className="text-3xl font-bold text-[hsl(var(--foreground))]">
+              A bit about me
             </h2>
+            <p>
+              I&apos;m a fullstack software engineer with over three years of
+              experience building scalable, user-friendly web applications. I
+              specialize in React, Next.js, Node, and TypeScript, and enjoy
+              working across the entire stack.
+            </p>
+            <p>
+              Before software, I pursued a deep passion for music as a classical
+              guitarist. I hold both a Bachelor&apos;s and a Master&apos;s
+              degree in Classical Guitar Performance.
+            </p>
+            <p>
+              My background in music fuels my attention to detail and creativity,
+              which I bring into every project. Over the years, I&apos;ve honed
+              my skills with technologies like React/Redux, Express, Flask,
+              Sequelize, and SQLAlchemy, always eager to learn and solve
+              challenging problems.
+            </p>
+            <p>
+              I&apos;ve worked in fast-paced startup environments where I led
+              architecture discussions, developed modular UI components, and
+              built secure, scalable backend services.
+            </p>
 
-            <div className="space-y-6 text-gray-300 leading-relaxed">
-              <p>
-                I&apos;m a fullstack software engineer with over three years of
-                experience building scalable, user-friendly web applications. I
-                specialize in React, Next.js, Node, and TypeScript, and enjoy
-                working across the entire stack — from crafting intuitive frontends
-                to building robust serverless APIs on AWS and Azure.
-              </p>
-
-              <p>
-                Before diving into software development, I pursued a deep passion
-                for music as a classical guitarist. I hold both a Bachelor&apos;s
-                and a Master&apos;s degree in Classical Guitar Performance and have
-                been honored with several awards and certifications along the way.
-              </p>
-
-              <p>
-                My background in music fuels my attention to detail and creativity,
-                which I bring into every project. Over the years, I&apos;ve honed my
-                skills with technologies like React/Redux, Express, Flask,
-                Sequelize, and SQLAlchemy, always eager to learn and solve
-                challenging problems.
-              </p>
-
-              <p>
-                I&apos;ve worked in fast-paced startup environments where I led
-                architecture discussions, developed modular UI components, and built
-                secure, scalable backend services. I thrive collaborating with
-                cross-functional teams and delivering polished products that users
-                love.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-4 mt-8">
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-yellow-400 text-black font-semibold rounded-full hover:bg-yellow-300 transition-all duration-200 hover:scale-105 shadow-lg"
-              >
+            <div className="flex flex-wrap gap-3 pt-2">
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary text-sm">
                 Download Resume
               </a>
-              <a
-                href="#contact"
-                onClick={(e) => handleSmoothScroll(e, "#contact")}
-                className="px-6 py-3 glass text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-200 hover:scale-105 cursor-pointer"
-              >
+              <a href="#contact" className="btn-secondary text-sm">
                 Get in Touch
               </a>
             </div>
           </div>
 
-          <div
-            className={`relative transition-all duration-1000 delay-300 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-            }`}
-          >
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition duration-500" />
+          <div className="md:col-span-2">
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src="/about.png"
                 alt="Sungmin Lee"
-                width={500}
-                height={600}
-                className="relative rounded-2xl shadow-2xl object-cover w-full hover-lift"
+                fill
+                className="object-cover"
                 priority
               />
             </div>
-
-            <div className="grid grid-cols-2 gap-4 mt-8">
-              <div className="glass rounded-xl p-4 text-center">
-                <div className="text-3xl font-bold text-yellow-400">3+</div>
-                <div className="text-sm text-gray-400">Years Experience</div>
+            <div className="grid grid-cols-2 gap-3 mt-4">
+              <div className="card p-4 text-center !shadow-none">
+                <div className="text-2xl font-bold text-[hsl(var(--primary))]">3+</div>
+                <div className="text-xs text-[hsl(var(--muted-foreground))]">Years Experience</div>
               </div>
-              <div className="glass rounded-xl p-4 text-center">
-                <div className="text-3xl font-bold text-yellow-400">10+</div>
-                <div className="text-sm text-gray-400">Projects Completed</div>
+              <div className="card p-4 text-center !shadow-none">
+                <div className="text-2xl font-bold text-[hsl(var(--primary))]">10+</div>
+                <div className="text-xs text-[hsl(var(--muted-foreground))]">Projects Completed</div>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const GA_ID = "G-Q622MW6BRD";
 
@@ -15,8 +16,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var t = localStorage.getItem('theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark');
+                }
+              })();
+            `,
+          }}
+        />
         <script
           src="https://kit.fontawesome.com/db311df611.js"
           crossOrigin="anonymous"
@@ -24,6 +37,7 @@ export default function RootLayout({
         ></script>
       </head>
       <body>
+        <ThemeProvider>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
@@ -37,6 +51,7 @@ export default function RootLayout({
           `}
         </Script>
         {children}
+        </ThemeProvider>
       </body>
     </html>
   );

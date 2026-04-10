@@ -14,24 +14,27 @@ export const metadata = {
 export default function SoftwarePage() {
   return (
     <PageShell>
-      <section className="pt-16 pb-8 px-4 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
-            <span className="text-gradient">Software Engineering</span>
+      <section className="pt-16 pb-8 px-6 md:px-12 lg:px-20">
+        <div className="max-w-4xl mx-auto">
+          <p className="section-subtitle mb-3">Software Engineering</p>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            Building for the web.
           </h1>
-          <p className="text-lg text-gray-400 leading-relaxed">
+          <p className="text-lg text-[hsl(var(--muted-foreground))] leading-relaxed max-w-2xl">
             Fullstack development with React, Next.js, Node.js, and TypeScript.
-            From crafting intuitive frontends to building robust serverless APIs.
+            From intuitive frontends to robust serverless APIs.
           </p>
         </div>
       </section>
 
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16 md:space-y-24">
-        <About />
-        <Skills />
-        <Projects />
-        <ClientWork />
-        <Contact />
+      <main className="px-6 md:px-12 lg:px-20 py-8 space-y-20">
+        <div className="max-w-4xl mx-auto space-y-20">
+          <About />
+          <Skills />
+          <Projects />
+          <ClientWork />
+          <Contact />
+        </div>
       </main>
     </PageShell>
   );
