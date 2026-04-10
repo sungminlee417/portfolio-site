@@ -65,18 +65,18 @@ const tabs: {
     artist: "Coldplay",
     description:
       "Fingerstyle guitar arrangement of Coldplay's Sparks. Fully tabbed with standard notation.",
-    price: "$1.99",
+    price: "Free",
     difficulty: "Beginner",
-    link: "https://sungminleeguitars.gumroad.com/l/wvgqsm",
+    link: "/tabs/sparks.pdf",
   },
   {
     title: "From the Start",
     artist: "Laufey",
     description:
       "Fingerstyle guitar arrangement of Laufey's From the Start. Fully tabbed with standard notation.",
-    price: "$1.99",
+    price: "Free",
     difficulty: "Intermediate",
-    link: "https://sungminleeguitars.gumroad.com/l/quwob",
+    link: "/tabs/from-the-start.pdf",
   },
 ];
 
@@ -322,11 +322,10 @@ export default function GuitarPage() {
                     {tab.link ? (
                       <a
                         href={tab.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        download
                         className="btn-primary w-full justify-center text-sm"
                       >
-                        Get Tab
+                        {tab.price === "Free" ? "Download Free" : "Get Tab"}
                       </a>
                     ) : (
                       <span className="btn-secondary w-full justify-center text-sm cursor-default opacity-50">
