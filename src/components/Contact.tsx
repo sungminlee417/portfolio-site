@@ -71,7 +71,7 @@ export default function Contact() {
               <span className="text-gradient">Let&apos;s Connect</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Whether you&apos;re interested in collaboration, have a project in mind, 
+              Whether you&apos;re interested in collaboration, have a project in mind,
               or just want to say hello — I&apos;d love to hear from you!
             </p>
           </div>

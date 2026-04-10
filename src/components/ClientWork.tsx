@@ -26,43 +26,18 @@ export default function ClientWork() {
 
   const featuredProjects = [
     {
-      name: "Glenn Canin Guitars",
-      description: "Professional website for master luthier Glenn Canin, showcasing handcrafted concert classical guitars with traditional Spanish construction methods and innovative doubletop design.",
-      client: "Master Guitar Luthier",
-      year: "2025",
-      link: "https://glenn-canin-guitars-dpv5.vercel.app/",
-      services: ["Web Design", "Development", "E-commerce Strategy"],
-      features: [
-        "Detailed guitar specifications and pricing for each instrument",
-        "Professional photography gallery showcasing craftsmanship",
-        "Custom guitar commissioning information and process",
-        "Content management system powered by Sanity"
-      ]
-    },
-    {
-      name: "Collin Holloway",
-      description: "Portfolio website for classical guitarist Collin Holloway, Eastman School graduate and co-founder of Off the Dock Chamber Music Festival.",
-      client: "Classical Guitarist",
-      year: "2025",
-      link: "https://collin-holloway.netlify.app/",
-      services: ["Web Design", "Development", "Portfolio Showcase"],
-      features: [
-        "Discography showcase with two studio albums",
-        "Integrated YouTube video performance gallery",
-        "Competition wins and festival performance history",
-        "Professional booking contact form"
-      ]
-    }
-  ];
-
-  const otherProjects = [
-    {
       name: "Luke Benedict",
       description: "Professional website for innovative composer-pianist Luke Benedict, showcasing his modernistic compositions and concert performances.",
       client: "Composer & Pianist",
       year: "2024",
       link: "https://lukebenedict.com/",
-      services: ["Web Design", "Development", "Content Strategy"]
+      services: ["Web Design", "Development", "Content Strategy"],
+      features: [
+        "Showcase of modernistic compositions and concert repertoire",
+        "Event calendar with upcoming performances",
+        "Media gallery with recordings and press materials",
+        "Responsive design optimized for all devices"
+      ]
     },
     {
       name: "The Muse Duo",
@@ -70,7 +45,13 @@ export default function ClientWork() {
       client: "Chamber Music Ensemble",
       year: "2024",
       link: "https://themuseduo.com/",
-      services: ["Web Design", "Development", "Branding"]
+      services: ["Web Design", "Development", "Branding"],
+      features: [
+        "Ensemble biography and artist profiles",
+        "Performance calendar and booking information",
+        "Media section with audio and video recordings",
+        "Cohesive visual branding and design system"
+      ]
     }
   ];
 
@@ -86,18 +67,15 @@ export default function ClientWork() {
         </p>
       </div>
 
-      {/* Featured Projects Section */}
       <div className="mb-16">
-        <h3 className="text-2xl font-semibold text-yellow-400 mb-8 text-center">
-          Featured Projects
-        </h3>
         <div className="space-y-12">
           {featuredProjects.map((project, index) => (
             <div
               key={project.name}
-              className={`transition-all duration-1000 delay-${index * 200} ${
+              className={`transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
+              style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className="glass-dark rounded-3xl overflow-hidden">
                 <div className="grid lg:grid-cols-2 gap-0">
@@ -213,65 +191,6 @@ export default function ClientWork() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Other Projects Section */}
-      <div className="mb-16">
-        <h3 className="text-2xl font-semibold text-yellow-400 mb-8 text-center">
-          Other Projects
-        </h3>
-        <div className="grid md:grid-cols-2 gap-6">
-          {otherProjects.map((project, index) => (
-            <div
-              key={project.name}
-              className={`transition-all duration-1000 delay-${(index + 2) * 200} ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
-            >
-              <div className="glass-dark rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 h-full flex flex-col">
-                <div className="flex items-start justify-between mb-3">
-                  <h4 className="text-xl font-bold text-white">
-                    {project.name}
-                  </h4>
-                  <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs font-semibold rounded-full">
-                    {project.year}
-                  </span>
-                </div>
-                
-                <p className="text-yellow-400 font-medium text-sm mb-3">
-                  {project.client}
-                </p>
-                
-                <p className="text-gray-400 text-sm mb-4 flex-grow">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.services.map((service) => (
-                    <span
-                      key={service}
-                      className="px-2 py-1 bg-white/10 text-gray-300 text-xs rounded-full border border-white/20"
-                    >
-                      {service}
-                    </span>
-                  ))}
-                </div>
-                
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 transition-colors duration-200 text-sm font-medium"
-                >
-                  <span>View Site</span>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
               </div>
             </div>
           ))}

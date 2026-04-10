@@ -1,9 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Sungmin Lee",
+  title: "Sungmin Lee — Software Engineer & Guitar Instructor",
   description:
-    "Portfolio of Sungmin Lee – Software Engineer and Classical Guitarist",
+    "Sungmin Lee — Fullstack software engineer and classical & fingerstyle guitar instructor. Explore my work, book a lesson, or browse the tab shop.",
 };
 
 export default function RootLayout({
