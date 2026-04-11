@@ -78,6 +78,14 @@ const tabs: {
     difficulty: "Intermediate",
     link: "/tabs/from-the-start.pdf",
   },
+  {
+    title: "Sketch #1 in D Major",
+    description:
+      "Original composition for fingerstyle guitar. Fully tabbed with standard notation.",
+    price: "$1.99",
+    difficulty: "Intermediate",
+    link: "https://sungminleeguitars.gumroad.com/l/cineua",
+  },
 ];
 
 const socialIconClass =
@@ -322,10 +330,10 @@ export default function GuitarPage() {
                     {tab.link ? (
                       <a
                         href={tab.link}
-                        download
+                        {...(tab.price === "Free" ? { download: true } : { target: "_blank", rel: "noopener noreferrer" })}
                         className="btn-primary w-full justify-center text-sm"
                       >
-                        {tab.price === "Free" ? "Download Free" : "Get Tab"}
+                        {tab.price === "Free" ? "Download Free" : "Purchase"}
                       </a>
                     ) : (
                       <span className="btn-secondary w-full justify-center text-sm cursor-default opacity-50">
