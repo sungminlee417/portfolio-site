@@ -78,12 +78,51 @@
     }
   }
 
+  @keyframes drift {
+    0%, 100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    33% {
+      transform: translate3d(30px, -40px, 0) scale(1.05);
+    }
+    66% {
+      transform: translate3d(-25px, 20px, 0) scale(0.95);
+    }
+  }
+
   .animate-fadeIn {
     animation: fadeIn 0.6s ease-out;
   }
 
   .animate-float {
     animation: float 4s ease-in-out infinite;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(60px);
+    opacity: 0.35;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .dark .orb {
+    opacity: 0.25;
+  }
+
+  .orb-1 {
+    background: hsl(var(--primary));
+    animation: drift 18s ease-in-out infinite;
+  }
+
+  .orb-2 {
+    background: hsl(28 90% 65%);
+    animation: drift 22s ease-in-out infinite reverse;
+  }
+
+  .dark .orb-2 {
+    background: hsl(220 60% 40%);
   }
 
   .text-accent {

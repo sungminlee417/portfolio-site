@@ -118,7 +118,7 @@ export default function GuitarPage() {
       navActions={
         <a
           href="#tab-shop"
-          className="btn-primary text-xs !py-2 !px-4"
+          className="hidden sm:inline-flex btn-primary text-xs !py-2 !px-4"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
@@ -290,6 +290,57 @@ export default function GuitarPage() {
                   Email Me
                 </a>
               </div>
+            </div>
+          </section>
+
+          {/* Watch & Listen */}
+          <section
+            id="watch"
+            ref={(el) => { sectionRefs.current["watch"] = el; }}
+          >
+            <div className={`transition-all duration-1000 ${isVisible["watch"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+              <p className="section-subtitle mb-3">Watch & Listen</p>
+              <h2 className="text-3xl font-bold mb-3">Recent playing</h2>
+              <p className="text-[hsl(var(--muted-foreground))] mb-8">
+                Arrangements, originals, and studio moments — all on YouTube.
+              </p>
+
+              <a
+                href="https://www.youtube.com/@sungminleeguitars"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block card p-0 overflow-hidden"
+              >
+                <div className="relative aspect-video bg-gradient-to-br from-[hsl(var(--secondary))] to-[hsl(var(--muted))] flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary))/15,transparent_60%)]" />
+                  <div className="relative flex flex-col items-center gap-3 text-center px-6">
+                    <div className="w-20 h-20 rounded-full bg-[hsl(var(--primary))] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                    <p className="text-sm font-semibold text-[hsl(var(--foreground))]">
+                      Watch on YouTube
+                    </p>
+                    <p className="text-xs text-[hsl(var(--muted-foreground))]">
+                      @sungminleeguitars
+                    </p>
+                  </div>
+                </div>
+                <div className="p-5 flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold group-hover:text-[hsl(var(--primary))] transition-colors">
+                      Fingerstyle covers & original compositions
+                    </p>
+                    <p className="text-sm text-[hsl(var(--muted-foreground))] mt-0.5">
+                      New videos posted regularly
+                    </p>
+                  </div>
+                  <svg className="w-5 h-5 text-[hsl(var(--muted-foreground))] group-hover:text-[hsl(var(--primary))] group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </a>
             </div>
           </section>
 

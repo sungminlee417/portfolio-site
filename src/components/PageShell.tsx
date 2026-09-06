@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 
 const iconClass = "w-5 h-5 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors";
@@ -44,7 +45,6 @@ const footerVariants = {
 
 export default function PageShell({
   children,
-  showBackButton = true,
   navActions,
   variant = "software",
 }: {
@@ -53,29 +53,36 @@ export default function PageShell({
   navActions?: React.ReactNode;
   variant?: "software" | "guitar";
 }) {
+  const pathname = usePathname();
+  const navLinkClass = (href: string) => {
+    const active = pathname?.startsWith(href);
+    return `px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+      active
+        ? "bg-[hsl(var(--secondary))] text-[hsl(var(--foreground))]"
+        : "text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] hover:bg-[hsl(var(--secondary))]"
+    }`;
+  };
+
   return (
     <div className="min-h-screen bg-[hsl(var(--background))] text-[hsl(var(--foreground))]">
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[hsl(var(--background))]/90 backdrop-blur-md border-b border-[hsl(var(--border))]">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[hsl(var(--background))]/80 backdrop-blur-md border-b border-[hsl(var(--border))]">
         <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="relative w-8 h-8">
+            <Link href="/" className="relative w-8 h-8" aria-label="Home">
               <Image src="/guitar-code.png" alt="Home" fill className="object-contain" />
             </Link>
-            <div className="flex items-center gap-4">
-              {navActions}
-              <ThemeToggle />
-              {showBackButton && (
-                <Link
-                  href="/"
-                  className="inline-flex items-center gap-2 text-[hsl(var(--muted-foreground))] hover:text-[hsl(var(--foreground))] transition-colors text-sm font-medium"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                  </svg>
-                  Back
-                </Link>
-              )}
+            <div className="flex items-center gap-1 sm:gap-2">
+              <Link href="/software" className={navLinkClass("/software")}>
+                Software
+              </Link>
+              <Link href="/guitar" className={navLinkClass("/guitar")}>
+                Guitar
+              </Link>
+              {navActions && <div className="ml-2">{navActions}</div>}
+              <div className="ml-1">
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         </div>

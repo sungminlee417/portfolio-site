@@ -1,6 +1,7 @@
 import "./globals.css";
 import Script from "next/script";
 import ThemeProvider from "@/components/ThemeProvider";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const GA_ID = "G-Q622MW6BRD";
 
@@ -38,6 +39,7 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
+        <ScrollProgress />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
