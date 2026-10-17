@@ -1,64 +1,33 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import Image from 'next/image'
+import { useEffect, useRef, useState } from 'react'
+import type { SkillCategory } from '@/lib/sanity/types'
 
-const skillCategories = [
-  {
-    title: "Frontend",
-    skills: [
-      { name: "JavaScript", icon: "/javascript.png" },
-      { name: "TypeScript", icon: "/typescript.svg.png" },
-      { name: "React", icon: "/react.svg.png" },
-      { name: "Next.js", icon: "/nextjs.svg" },
-      { name: "Redux", icon: "/redux.svg" },
-      { name: "Tailwind CSS", icon: "/tailwind.svg.png" },
-    ],
-  },
-  {
-    title: "Backend",
-    skills: [
-      { name: "Node.js", icon: "/nodejs.svg.png" },
-      { name: "Express", icon: "/express.png" },
-      { name: "Python", icon: "/python.svg.png" },
-      { name: "Django", icon: "/django.svg.png" },
-      { name: "Flask", icon: "/flask.png" },
-    ],
-  },
-  {
-    title: "Database & Cloud",
-    skills: [
-      { name: "PostgreSQL", icon: "/postgresql.png" },
-      { name: "SQLite3", icon: "/sqlite3.svg.png" },
-      { name: "Supabase", icon: "/supabase.png" },
-      { name: "Sanity", icon: "/sanity.svg" },
-      { name: "Decap CMS", icon: "/decap.jpg" },
-      { name: "AWS", icon: "/aws.png" },
-      { name: "Docker", icon: "/docker.svg" },
-    ],
-  },
-];
+interface Props {
+  skillCategories: SkillCategory[]
+}
 
-export default function Skills() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
+export default function Skills({ skillCategories }: Props) {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
+        if (entry.isIntersecting) setIsVisible(true)
       },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
+      { threshold: 0.1 },
+    )
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section id="skills" ref={sectionRef}>
       <div
         className={`transition-all duration-1000 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
         <p className="section-subtitle mb-3">Skills</p>
@@ -73,12 +42,12 @@ export default function Skills() {
               <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
                 {category.skills.map((skill) => (
                   <div
-                    key={skill.name}
+                    key={skill._id}
                     className="card flex flex-col items-center gap-2 p-4 !rounded-xl hover:!shadow-md"
                   >
                     <div className="relative w-8 h-8">
                       <Image
-                        src={skill.icon}
+                        src={`/${skill.icon}`}
                         alt={skill.name}
                         fill
                         className="object-contain"
@@ -95,5 +64,5 @@ export default function Skills() {
         </div>
       </div>
     </section>
-  );
+  )
 }

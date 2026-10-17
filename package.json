@@ -6,12 +6,19 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed": "npx tsx scripts/seed-sanity.ts"
   },
   "dependencies": {
+    "@sanity/client": "^8.9.0",
+    "@sanity/vision": "^5.31.2",
+    "dotenv": "^18.0.8",
     "next": "^15.5.15",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "next-sanity": "^11.6.13",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "sanity": "^5.31.2",
+    "styled-components": "^6.6.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
